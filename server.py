@@ -18,6 +18,16 @@ while True:                # forever
   elif data["OP"] == "sub":
     res = data["V1"] - data["V2"]
     status = "OK"
+  elif data["OP"] == "mul":
+    res = data["V1"] * data["V2"]
+    status = "OK"
+  elif data["OP"] == "div":
+    if data["V2"] != 0:
+      res = data["V1"] / data["V2"]
+      status = "OK"
+    else:
+      status = "NOK"
+      res = 2  # erro de divisão por zero
   else:
     status = "NOK"
     res = 1

@@ -1,10 +1,35 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/ZURhuU0i)
-# ClientServerBasics (2.0)
-Starter code for the basic client-server assignment
+# Calculadora Remota Cliente-Servidor
 
+## Descrição do Sistema
 
-Este template corresponde ao exemplo da Fig. 2.3 do livro. O exercício consiste em acrescentar funcionalidade ao servidor para torná-lo mais útil. Essa funcionalidade deve ser acessível aos clientes. Por exemplo, o servidor pode ser uma espécie de calculadora remota. O cliente passa dois valores numéricos, juntamente com o nome de uma operação (ex.: add, subtract, multiply, divide) e o servidor executa a operação respectiva e retorna seu resultado para o cliente. Você pode implementar outro tipo de servidor (diferente da calculadora). O imporante é que ele ofereça pelo menos três operações diferentes que os clientes podem utilizar remotamente, passando dados para serem processados e recebendo o resultado desse processamento como resposta.
+Este sistema implementa uma calculadora remota usando arquitetura cliente-servidor com sockets TCP.
 
-Tarefa individual.
+### Funcionalidades
 
-Incluir um Readme descritivo do sistema implementado.
+O servidor oferece **4 operações matemáticas**:
+
+1. **sum** - Soma de dois números
+2. **sub** - Subtração de dois números  
+3. **mul** - Multiplicação de dois números
+4. **div** - Divisão de dois números (com proteção contra divisão por zero)
+
+### Arquitetura
+
+- **server.py**: Servidor que escuta na porta 5678, recebe requisições dos clientes, executa as operações e retorna os resultados
+- **client.py**: Cliente que se conecta ao servidor, envia operação e operandos, e recebe o resultado
+- **constCS.py**: Constantes compartilhadas (HOST e PORT)
+
+### Como Executar
+
+1. Inicie o servidor:
+```bash
+python server.py
+```
+
+2. Em outro terminal, execute o cliente:
+```bash
+python client.py
+```
+
+3. Digite a operação desejada (sum, sub, mul, div) e os dois operandos quando solicitado.

@@ -16,6 +16,8 @@ if data["STATUS"] == "OK":
   print ("Result: ", data["RES"])            # print the result
 elif data["STATUS"] == "NOK" and data["RES"] == 1:
   print ("Operation does not exist.")
+elif data["STATUS"] == "NOK" and data["RES"] == 2:
+  print ("Error: Division by zero.")
 else:
-  print ("Resultado inesperado.")
+  print ("Unexpected result.")
 s.close()               # close the connection
